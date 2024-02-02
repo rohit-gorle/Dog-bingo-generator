@@ -1,0 +1,108 @@
+/* styles.scss */
+.container {
+  text-align: center;
+  margin: 20px;
+}
+
+.input-box {
+  position: relative;
+  width: 612px;
+  height: 62px;
+  margin: 20px auto;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+.input-box label, .input-box input, .input-box button {
+  margin: 10px;
+}
+
+/* Styling for the blue button */
+.input-box button {
+  background: #0D6EFD;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.large-tile {
+  position: absolute;
+  width: 372px;
+  height: 372px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  grid-gap: 10px;
+  margin: 10px auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.dog-breed {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  aspect-ratio: 1/1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dog-breed:hover {
+  overflow: visible;
+  white-space: normal;
+}
+
+/* Media query for smaller screens (e.g., mobile) */
+@media (max-width: 768px) {
+  .input-box {
+    width: auto; 
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .input-box label, .input-box input, .input-box button {
+    margin: 10px;
+  }
+
+  .large-tile {
+    width: 80%; 
+    height: auto;
+  }
+
+  .card {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); 
+    grid-gap: 8px;
+  }
+
+  .dog-breed {
+    padding: 3px;
+  }
+}
