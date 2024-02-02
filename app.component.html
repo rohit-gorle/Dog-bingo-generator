@@ -1,0 +1,25 @@
+<!-- app.component.html -->
+<div class="container">
+  <h1>Dog Bingo</h1>
+  <div class="input-box">
+    <div class="input-group">
+      <label for="numberOfCards">Generate</label>
+      <input type="number" id="numberOfCards" [(ngModel)]="numberOfCards" min="1" max="5" required>
+      <label for="rowsCols">random bingo cards, eachwith</label>
+      <input type="number" id="rowsCols" [(ngModel)]="rowsCols" min="1" max="5" required>
+      <label for="rowsCols">rows/cols.</label> 
+    </div>
+
+    <button [disabled]="!isValidInput()" (click)="generateBingoCards()">Generate</button>
+  </div>
+
+  
+  <div class="bingo-cards">
+    <div *ngFor="let card of bingoCards" class="card">
+      <div *ngFor="let row of card" class="row">
+        <div *ngFor="let breed of row" class="dog-breed" [title]="breed" (click)="showRandomDogImage(breed)">
+          {{ breed | truncate: 15 }}
+        </div>
+      </div>
+    </div>
+  </div>
